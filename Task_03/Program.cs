@@ -41,6 +41,7 @@ void PrintArray(int[] array)
 
 int newRandomNumber = new Random().Next(10, 1000);
 Console.WriteLine(newRandomNumber);
+int Temp = newRandomNumber;
 
 // Инициализируем новый массив InterestingDigits длиной 10 чисел
 int[] InterestingDigits = new int[10];
@@ -54,7 +55,7 @@ while (count < InterestingDigits.Length)
         // Для этого, сначала получим его размер numberSize, обратившись к функции GetNumberLength
         int numberSize = GetNumberLength(newRandomNumber);
         Console.WriteLine(numberSize);
-
+       
         // Теперь раскладываем число на составляющие цифры и записываем в массив
         int[] ComponentsOfNumber = new int[numberSize];
         for(int i = 0; i < numberSize; i++)
@@ -81,8 +82,9 @@ while (count < InterestingDigits.Length)
         if (multiply % sum == 0)
             {
                 Console.WriteLine("Интересное число");
-               
-                InterestingDigits[count] = newRandomNumber;
+                Console.WriteLine(Temp);
+
+                InterestingDigits[count] = Temp;
             }
             else
             {
