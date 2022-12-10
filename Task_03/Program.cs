@@ -47,7 +47,7 @@ int Temp = newRandomNumber;
 int[] InterestingDigits = new int[10];
 
 int count = 0;
-while (count < InterestingDigits.Length)
+while (count < 10)
 
 {
 
@@ -70,15 +70,19 @@ while (count < InterestingDigits.Length)
         int sum = 0;        // сумма чисел изначально пусть будет 0
         int multiply = 1;   // произведение чисел, чтоб не было 0 в результате произведения на 0, возмем нач. значение 1
         int j = 0;          // счетчик
-        // int interestingProperty = 1; 
+        
         while(j < numberSize)
         {
             multiply = ComponentsOfNumber[j] * multiply;
             sum = ComponentsOfNumber[j] + sum;
             j++;
         }
-        // interestingProperty = multiply % sum;
 
+        Console.WriteLine();
+        Console.WriteLine(multiply);
+        Console.WriteLine(sum);
+        Console.WriteLine(multiply / sum);
+        
         if (multiply % sum == 0)
             {
                 Console.WriteLine("Интересное число");
@@ -90,14 +94,6 @@ while (count < InterestingDigits.Length)
             {
             Console.WriteLine("НЕинтересное число");
             }
-
-        Console.WriteLine();
-        Console.WriteLine(multiply);
-        Console.WriteLine(sum);
-        Console.WriteLine(multiply / sum);
-
-        // Console.WriteLine(interestingProperty);
-
 
 
 count++;
