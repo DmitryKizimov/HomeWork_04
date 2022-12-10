@@ -46,8 +46,14 @@ int Temp = newRandomNumber;
 // Инициализируем новый массив InterestingDigits длиной 10 чисел
 int[] InterestingDigits = new int[10];
 
+        // Производим вычисления. Вычисляем произведение цифр (multiply) и сумму цифр (sum). Делим первое значение на второе.
+        // Обьявим переменные:
+        int sum = 0;        // сумма чисел изначально пусть будет 0
+        int multiply = 1;   // произведение чисел, чтоб не было 0 в результате произведения на 0, возмем нач. значение 1
+        int j = 0;          // счетчик
+
 int count = 0;
-while (count < 10)
+while(count < InterestingDigits.Length)
 
 {
 
@@ -66,11 +72,6 @@ while (count < 10)
 
         PrintArray(ComponentsOfNumber);
 
-        // Производим вычисления. Вычисляем произведение цифр (multiply) и сумму цифр (sum). Делим первое значение на второе.
-        int sum = 0;        // сумма чисел изначально пусть будет 0
-        int multiply = 1;   // произведение чисел, чтоб не было 0 в результате произведения на 0, возмем нач. значение 1
-        int j = 0;          // счетчик
-        
         while(j < numberSize)
         {
             multiply = ComponentsOfNumber[j] * multiply;
@@ -82,23 +83,28 @@ while (count < 10)
         Console.WriteLine(multiply);
         Console.WriteLine(sum);
         Console.WriteLine(multiply / sum);
-        
+
         if (multiply % sum == 0)
             {
                 Console.WriteLine("Интересное число");
                 Console.WriteLine(Temp);
 
-                InterestingDigits[count] = Temp;
+                InterestingDigits[count] = Temp;            
             }
             else
             {
-            Console.WriteLine("НЕинтересное число");
+                
+                Console.WriteLine("НЕинтересное число");
             }
+            
+            
+            
+
 
 
 count++;
-
 }
 
+PrintArray(InterestingDigits);
 
 
